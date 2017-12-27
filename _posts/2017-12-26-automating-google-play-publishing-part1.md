@@ -34,7 +34,7 @@ In order to create a signed build of your app, you can either use AndroidStudio'
 
 Add this snippet to your build.grade's android section:
 
-{% gist 567649cc7e4df418721d4c082f832863 build.gradle %}
+
 
 You can now run `./gradlew assembleRelease` command to create a signed APK directly.
 
