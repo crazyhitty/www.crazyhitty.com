@@ -1,0 +1,4 @@
+- name: Predator for Product Hunt
+  descr: "Predator is a minimalistic client for ProductHunt. It shows latest products and collections fetched via ProductHunt API. It also offers other information like media and comments associated with that product."
+  image: pong.png
+  github: https://github.com/crazyhitty/Capstone-Project

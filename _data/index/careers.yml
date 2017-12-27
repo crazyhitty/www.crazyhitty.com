@@ -1,0 +1,16 @@
+# careers section data
+# if you don't have language feature(language.yml is empty), ignore "i18n" items
+- name: Witworks
+  link: http://www.witworks.com/
+  date: March 2017 - <i class="fa fa-clock-o" aria-hidden="true" title="Until Now"></i>
+  job: Android Developer
+
+- name: BR Softech
+  link: http://www.brsoftech.com/
+  date: March 2016 - Dec 2016
+  job: Android Developer
+
+- name: Global solutions
+  link: 
+  date: July 2015 - Feb 2016
+  job: Junior Android Developer
