@@ -18,19 +18,9 @@ Manual publishing is a chore and a waste of time as it involves a lot of steps w
 5. Submit the update.
 6. Repeat the above 5 steps again for a new release.
 
-<p align="center">
-  <img src="https://i.imgur.com/egPFU9T.gif" width="800">
-  <i style="font-size:12px">Ahhhhhhhhh it hurts!</i>
-</p>
-
 Doing this again and again can become quite irritating after a while. Also, if you are uploading multiple APKs for every release then manual publishing would only lead to headaches.
 
 So, automating this part can help save you some time which you can use to procrastinate ;)
-
-<p align="center">
-  <img src="https://i.imgur.com/SMj7ttv.gif" width="800">
-  <i style="font-size:12px">Let it build while I chill :D</i>
-</p>
 
 **Prerequisites:**
 
