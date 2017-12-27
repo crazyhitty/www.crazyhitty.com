@@ -34,7 +34,28 @@ In order to create a signed build of your app, you can either use AndroidStudio'
 
 Add this snippet to your build.grade's android section:
 
+{% highlight gradle %}
+android {
+    ...
 
+    signingConfigs {
+        release {
+            storeFile file("someDirectory/my_keystore.jks")
+            storePassword "my_store_pass_here"
+            keyAlias "my_key_alias_here"
+            keyPassword "my_key_pass_here"
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+{% endhighlight %}
 
 You can now run `./gradlew assembleRelease` command to create a signed APK directly.
 
