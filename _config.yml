@@ -1,0 +1,74 @@
+#
+###################################
+# Site wide configuration
+####################################
+#
+title: crazyhitty
+email: kartik.sharma@gmail.com
+description: 
+url: https://crazyhitty.github.io/www.crazyhitty.com # the base hostname & protocol for your site
+keywords: ["Programming", "Android"]
+
+#
+###################################
+# Jekyll configuration
+####################################
+#
+timezone:          Asia/Calcutta
+markdown:          kramdown
+highlighter:       rouge
+excerpt_separator: <!--more-->
+permalink:         /articles/:year-:month/:title
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
+
+#
+###################################
+# Site Owner configuration
+####################################
+#
+owner:
+  name: Kartik Sharma
+  avatar: 
+  job: "Android Developer"
+  bio: "Still waiting for gradle sync to finish."
+  email: kartik.sharma.og@gmail.com
+  disqus-shortname: 
+  twitter: cr42yh17m4n #username
+  facebook: #username
+  google:
+    plus: #username
+    analytics: 
+    verify:
+    ad-client:
+    ad-slot:
+  bing-verify:
+  github: crazyhitty #username
+  stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
+  linkedin: kartik-chdev #username
+  xing: #username
+  instagram: #username
+  lastfm: #username
+  tumblr: #username
+  pinterest: #username
+  foursquare: #username
+  steam: #username
+  dribbble: #username
+  youtube: #username
+  soundcloud: #username
+  weibo: #username
+  flickr: #username
+  codepen: #username
+  telegram: #username
+
+#
+###################################
+# Gem plugins
+####################################
+#
+plugins: [jekyll-paginate, jekyll-gist]
