@@ -71,4 +71,4 @@ owner:
 # Gem plugins
 ####################################
 #
-plugins: [jekyll-paginate, jekyll-gist]
+plugins: [jekyll-paginate]
