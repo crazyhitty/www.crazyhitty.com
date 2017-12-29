@@ -155,6 +155,26 @@ a.read-more {
   }
 }
 
+.PageNavigation {
+  font-size: 14px;
+  font-weight: bold;
+  display: block;
+  width: auto;
+  overflow: hidden;
+}
+.PageNavigation a {
+  display: block;
+  margin: 1em 0;
+}
+.PageNavigation .prev {
+  text-align: left;
+  float: left;
+}
+.PageNavigation .next {
+  text-align: right;
+  float: right;
+}
+
 // Shares Buttons
 .share-buttons {
   padding-top: 1em;
