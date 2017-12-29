@@ -2,7 +2,7 @@
 layout: post
 title: Automating Google Play Publishing - Part 1
 categories: [tutorial]
-comments: false
+comments: true
 ---
 
 Manual publishing is a chore and a waste of time as it involves a lot of steps which are redundant and can be easily automated.
@@ -59,7 +59,7 @@ android {
 
 You can now run `./gradlew assembleRelease` command to create a signed APK directly.
 
-In the next part, we will discuss how to upload your signed APK directly to google play.
+In the next part, we will discuss how to set up your google play developer account.
 
 **PS:** In upcoming parts of this blog series, I will also explain how to secure your keystore details for your open source projects.
 
