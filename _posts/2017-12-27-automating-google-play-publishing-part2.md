@@ -3,6 +3,7 @@ layout: post
 title: Automating Google Play Publishing - Part 2
 categories: [tutorial]
 comments: true
+published: true
 ---
 
 Inorder to publish the release build on google play we need to setup our developer account.
