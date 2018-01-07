@@ -3,13 +3,14 @@ layout: post
 title: Automating Google Play Publishing - Part 1
 categories: [tutorial]
 comments: true
+published: true
 ---
 
 Manual publishing is a chore and a waste of time as it involves a lot of steps which are redundant and can be easily automated.
 
 <!--more-->
 
-**Manual publishing requires these steps:**
+###### Manual publishing requires these steps
 
 1. Create a signed APK for your app.
 2. Login to the google play developer account.
@@ -22,7 +23,7 @@ Doing this again and again can become quite irritating after a while. Also, if y
 
 So, automating this part can help save you some time which you can use to procrastinate ;)
 
-**Prerequisites:**
+###### Prerequisites
 
 1. Google play developer account.
 2. An already listed app in your developer account.
