@@ -93,7 +93,7 @@ Here is the description about properties used in `play` section.
 | [errorOnSizeLimit](https://github.com/Triple-T/gradle-play-publisher#text-requirements)      | Plugin checks if the provided details like **title**, **short description**, **long description** and **recent changes** are not exceeding their required limit. You can disable this check by setting this property to false. By default it is true. |
 | [uploadImages](https://github.com/Triple-T/gradle-play-publisher#upload-images)              | Upload images for Google Play Store listing. By default it is false.                                                                                                                                                                                  |
 
-**PS:** In the [previous blog]({{ site.baseurl }}{% post_url 2017-12-27-automating-google-play-publishing-part2 %}) we discussed about how to create a service account and json key file. These properties are required inorder to authenticate with your google play account. Please check the previous blog to know more about these properties.
+**PS:** In the [previous blog post]({{ site.baseurl }}{% post_url 2017-12-27-automating-google-play-publishing-part2 %}) we discussed about how to create a service account and json key file. These properties are required inorder to authenticate with your google play account. Please check the previous blog to know more about these properties.
 
 ## Preparing for release 🚀
 
