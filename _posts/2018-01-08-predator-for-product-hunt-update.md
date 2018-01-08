@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Predator for Product Hunt update (0.42, 04/01/17)
+title: Predator for Product Hunt update (0.42, 08/01/17)
 categories: [predator for product hunt]
 comments: true
-published: false
+published: true
 ---
 
 <!--more-->
@@ -13,7 +13,7 @@ published: false
         <img src="https://img.shields.io/badge/Version-0.42-brightgreen.svg" alt="Version" align="left" style="padding-right: 5px">
     </a>
     <a href="https://play.google.com/store/apps/details?id=com.crazyhitty.chdev.ks.predator">
-        <img src="https://img.shields.io/badge/Released%20On-04%2F01%2F17-9C27B0.svg" alt="Version" align="left">
+        <img src="https://img.shields.io/badge/Released%20On-08%2F01%2F17-9C27B0.svg" alt="Version" align="left">
     </a>
     <br>
 </p>
