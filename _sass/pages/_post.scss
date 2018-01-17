@@ -266,3 +266,17 @@ a.read-more {
     border-color: #5f99cf;
   }
 }
+.kofi {
+  background-color: #46b798;
+  color: $white;
+  border-color: #46b798;
+  &:visited {
+    color: $white;
+    border-color: #46b798;
+  }
+  &:hover {
+    background-color: $white;
+    color: #46b798;
+    border-color: #46b798;
+  }
+}
