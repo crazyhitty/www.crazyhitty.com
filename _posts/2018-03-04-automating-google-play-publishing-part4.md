@@ -3,7 +3,7 @@ layout: post
 title: Automating Google Play Publishing - Part 4
 categories: [tutorial]
 comments: true
-published: false
+published: true
 ---
 
 In the previous blog post we learned how to publish APK easily using a single gradle task. But what if you want to offload the build part also? That's where CI (Continuous Integration) comes in.
