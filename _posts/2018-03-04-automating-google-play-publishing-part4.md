@@ -12,7 +12,7 @@ In the previous blog post we learned how to publish APK easily using a single gr
 
 ## What is CI?
 
-From wikipedia
+From wikipedia,
 
 > In software engineering, continuous integration (CI) is the practice of merging all developer working copies to a shared mainline several times a day.
 
@@ -80,7 +80,7 @@ But before we do that we need to encrypt important files first.
 
 ## Encrypting sensitive data for Travis
 
-Without encryption your sensitive data can be used by anyone which makes it very easy for anyone to create the same application with same certificates, which is very scary. Also, it is very helpful for open source projects where you cannot directly put your release keys. Encrypting will allow to secure these files/keys and will only be decrypted when the travis CI build is being executed in the server.
+Without encryption your sensitive data can be used by anyone which makes it very easy for anyone to create the same application with same certificates, which is very scary. Also, it is very helpful for open source projects where you cannot directly put your release keys. Encrypting will allow you to secure these files/keys and will only be decrypted when the travis CI build is being executed in the server.
 
 **Things to encrypt:**
 
@@ -169,4 +169,65 @@ Now, we need to encrypt these files:
 
 First, paste both of these files inside your project directory and then follow these steps:
 
+1. Create a .tar archive file consisting both of these files.
+2. Then, encrypt the .tar file using `travis encrypt-file mySuperSecretKeys.tar`.
+3. This would create one more file named `mySuperSecretKeys.tar.enc` which is the encrypted version of your files.
+4. Now, just add the script in `before_install` section in `.travis.yml` to decrypt these files just before the build process starts.
+ 
+**NOTE:** Make sure to remove the sensitive files after encryption if your project is open source and avoid committing those files.
 
+{% highlight .travis.yml %}
+# Specify platform, in our scenario it would be android.
+language: android
+
+# Specify branches for build, "only" tag is used to initiate builds only for particular branches.
+# In this scenario, only master and develop branches will initiate the build.
+branches:
+  only:
+  - master
+  - develop
+
+# Specify the required components by android platform.
+android:
+  components:
+  - tools
+  - platform-tools
+  - tools
+  - build-tools-26.0.2
+  - android-26
+  - extra-google-google_play_services
+  - extra-google-m2repository
+  - extra-android-m2repository
+  - addon-google_apis-google-19
+  - sys-img-armeabi-v7a-addon-google_apis-google-26
+  licenses:
+  - android-sdk-license-.+
+
+# Just before installation, decrypt the files and extract the .tar files so that they can be directly accessed during the build.
+before_install:
+  - openssl aes-256-cbc -K $encrypted_400f62f18203_key -iv $encrypted_400f62f18203_iv -in mySuperSecretKeys.tar.enc -out mySuperSecretKeys.tar -d
+  - tar xvf mySuperSecretKeys.tar
+
+# The actual script which would be executed when a build is initiated.
+script:
+  - "./gradlew assembleRelease"
+
+# This is where all your encrypted keys should be provided.
+env:
+  global:
+  - secure: RNFro3a7k3INfB6y4hS9EC+R3ONn/iLkHra6d6WMkxs8POcLi5pnSL8V1sfAQZEdqaX9XBcPZ1Bdlzms0nEyjCWnrEoGlCjkIM68/UEJ2dVaP4lI+YAoZaeLGGq29HTZez0BObSf3ftG8w3eLN/3sUa7LxWKlWpP7Pr2AjA34tGrLo3ebSos5MVVzb4wMQpVJa7ilg/egPGTxEEq6FRpV8S/h4hv0+Sr6gdJld/Pzbi7Lt5Bt7V8KthH0+CV/eLh2nkrr9lrjRnkUqzefrcU2t1WW7mfZ5LWE1FG9+iZBoRV7NZPVxBvWXKzCstBMVoJFfCK+pldpXvp2ENLFXb9t5jtBXp8PfX5h8bmcKjfmcTS5eUOWfuiAKf4XP5Lg8dfV1yjzkyziOoUPAs5rIkeZkur2bSxpEq5Fy1ARzA+3Ra0/hpNvu9u73og+5LDCyGKXVDj2tDbIvrsc9fbXHtblxJjvAFDXzc+aksOcFhCYbhWRWGlkVe2ijCZJ9p4Tiq05KjenlUu8JzgRnNCTQtF9XR+bGMV+uwql6WSC3dNNhKkivRwiQkcTeokRwfds0jxkkOh2sXW62z86s2HqYQahkocQR68JE98UzsoMBux9gJWhkEsaPeHyLlUarXBIJndf+qjVyp972fOdtfJguEmiFTEAZ4u2SuFVjZfhBwrjMM=
+  - secure: myStoreKeyAliasEncrypted
+  - secure: myStoreKeyPasswordEncrypted
+  - secure: myGoogleApiServiceAccountMailEncrypted
+{% endhighlight %}
+
+## Triggering a release build on travis CI server
+
+After setting all of this up, whenever you push to `master` or `develop` branches, travis CI server would automatically trigger a release build. After the build is complete, it would
+upload the generated APK to the Google Play Store. Also, during the entire build process you can keep an eye on travis console to check if everything is working as expected or not.
+You can also cancel any ongoing build in travis if required.
+
+You can go check out my [project](https://github.com/crazyhitty/Capstone-Project) where I have successfully integrated `travis CI` and `gradle play publisher` plugin for automating
+google play publishing.
+
+**NOTE:** From now on, be more careful while pushing to develop/master ;)
