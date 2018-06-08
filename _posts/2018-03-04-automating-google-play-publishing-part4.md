@@ -159,7 +159,7 @@ env:
   - secure: myGoogleApiServiceAccountMailEncrypted
 {% endhighlight %}
 
-Later, we would also discuss how to access these keys. But before that, lets check out how to encrypt files.
+Travis would automatically decrypt these keys during build and use the values as environment variables. Now, lets check out on how to encrypt files.
 
 ###### Encrypting files
 
@@ -220,6 +220,8 @@ env:
   - secure: myStoreKeyPasswordEncrypted
   - secure: myGoogleApiServiceAccountMailEncrypted
 {% endhighlight %}
+
+**NOTE:** You can also look at travis's documentation on encrypting [keys](https://docs.travis-ci.com/user/encryption-keys/) and [files](https://docs.travis-ci.com/user/encrypting-files/) for more detailed explanation.
 
 ## Triggering a release build on travis CI server
 
